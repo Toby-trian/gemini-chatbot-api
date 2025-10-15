@@ -47,5 +47,5 @@ app.post('/generate-text', async (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log('Done 3000 bro');
+    console.log('Gemini AI');
 })
