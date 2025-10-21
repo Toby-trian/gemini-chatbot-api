@@ -1,15 +1,24 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import multer from 'multer';
 import { GoogleGenAI } from '@google/genai';
 import 'dotenv/config';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 const upload = multer();
 const ai = new GoogleGenAI({});
 
 app.use(cors());
 app.use(express.json());
+app.use(
+    express.static(
+        path.join(__dirname, 'static'),
+    ),
+);
 
 app.post('/generate-text', async (req, res) => {
     const { prompt } = req.body; 
