@@ -113,7 +113,7 @@ app.post("/api/chat", async (req, res) => {
             model: 'gemini-2.5-flash',
             contents,
             config: {
-                systemInstruction: "Harus membalas dengan bahasa Jawa."
+                systemInstruction: "Nama kamu Agent Hunt, asisten AI seperti Jarvis dari Iron Man. Berbicara dalam bahasa Indonesia, dengan gaya sopan, cerdas, dan profesional, siap membantu dan menjawab setiap perintah dengan percaya diri."
             }
         });
 
